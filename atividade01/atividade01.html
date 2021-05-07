@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<style>
+    input {
+        border-radius: 3px;
+        width: 220px;
+
+
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade01</title>
+
+
+</head>
+
+<body>
+    <h1 style="text-align: center;">Reserva Hotel IFSP</h1>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Nome Completo: <input required="required" type="text" name="nome">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Email: <input required="required" type="email" name="email">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Repita o email: <input required type="email" name="emailConfirma">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Estado de origem</label>
+                    <select required="required" name="estados-brasil">
+                        <option selected="selected"></option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label></label>
+                    Data de chegada: <input onclick="dataAtual()" class="data" required type="date" name="date" />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Número de noites (quartos são R$ 99,00 por noite): <input required type="number"
+                            name="numeroNoites1" oninput="updateTotal()" min="1" max="30" /> (min 1, max 30)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Número de noites (adicional de por convidado R$ 10,00 por noite): <input required type="number"
+                            name="numeroNoites2" oninput="updateTotal()" min="1" max="4" /> (min 1, max 4)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Total estimado: R$ <output id="total">0</output>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+
+                    <label>
+                        Código promocional: <input title="Códigos promocionais consistem de 6 caracteres alfanuméricos"
+                            minlength="6" maxlength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required
+                            type="text" name="codPromo" />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input onClick="return verificaEmail();" type="submit" value="Fazer reserva">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+    <script src="reserva.js"></script>
+</body>
+
+</html>
