@@ -24,17 +24,10 @@ function verificaEmail() {
 }
 
 function dataAtual() {
-    var date = new Date().toLocaleString("en-US", { timeZone: "America/Sao_Paulo" })
+    var date = new Date().toLocaleString("sv-fi", { timeZone: "America/Sao_Paulo" })
 
-    var dia = date.substr(2, 1);
-    var mes = date.substr(0, 1);
-    var ano = date.substr(4, 4);
+    date = date.split(" ")[0];
+    console.log(date);
 
-    dia = dia < 10 ? "0" + dia : dia;
-    mes = mes < 10 ? "0" + mes : mes;
-
-    document.getElementsByClassName('data')[0].setAttribute("min", ano + '-' + mes + '-' + dia);
+    document.getElementsByClassName('data')[0].setAttribute('min', date);
 }
-
-//dataAtual();
-
